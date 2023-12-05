@@ -5,7 +5,7 @@ const frameController = require('../controller/frame.controller');
 const router = new express.Router();
 
 // FACE
-router.post('/api/face', faceController.createFace);
+// router.post('/api/face', faceController.createFace);
 
 // FRAME
 router.get('/api/frames', frameController.getFrames);

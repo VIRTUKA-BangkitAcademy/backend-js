@@ -2,10 +2,11 @@ const prisma = require('../../prisma/prismaClient');
 
 async function getAllFrame() {
   const result = await prisma.frame.findMany({
-    include: {
-      face: {
-        select: { name: true },
-      },
+    select: {
+      name: true,
+      urlPicture: true,
+      gender: true,
+      face: true,
     },
   });
 
@@ -17,10 +18,12 @@ async function getFrame(id) {
     where: {
       id: Number(id),
     },
-    include: {
-      face: {
-        select: { name: true },
-      },
+    select: {
+      name: true,
+      urlPicture: true,
+      linkBuy: true,
+      gender: true,
+      face: true,
     },
   });
 
@@ -33,19 +36,26 @@ async function getFrame(id) {
 
 async function createFrame(body) {
   const {
-    name, link, picture, faceId, gender,
+    name, linkBuy, urlPicture, face, gender,
   } = body;
 
   const data = {
     name,
-    picture,
-    link,
-    face: { connect: { id: faceId } },
-    gender,
+    urlPicture,
+    linkBuy,
+    face: face.toUpperCase(),
+    gender: gender.toUpperCase(),
   };
   const result = await prisma.frame.create({
     data: {
       ...data,
+    },
+    select: {
+      name: true,
+      urlPicture: true,
+      linkBuy: true,
+      gender: true,
+      face: true,
     },
   });
 
