@@ -37,7 +37,7 @@ async function getFrame(req, res) {
 
 async function createFrame(req, res) {
   try {
-    const frame = await frameService.createFrame(req.body);
+    const frame = await frameService.createFrame(req, req.file.path);
 
     return res.status(200).json({
       status: 'OK',
