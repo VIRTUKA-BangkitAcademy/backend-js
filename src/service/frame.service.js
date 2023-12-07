@@ -1,6 +1,6 @@
-const axios = require('axios');
 const path = require('path');
 const prisma = require('../../prisma/prismaClient');
+const { ApiError } = require('../../helper/errorApiHandler');
 
 async function getAllFrame() {
   console.log(path.join(__dirname, '..', 'images'));
@@ -12,6 +12,10 @@ async function getAllFrame() {
       face: true,
     },
   });
+
+  if (!result) {
+    throw new ApiError(500, 'internal server error', true);
+  }
 
   return result;
 }
@@ -25,6 +29,10 @@ async function getAllFrameByQuery(face, gender) {
       gender,
     },
   });
+
+  if (!result) {
+    throw new ApiError(500, 'internal server error', true);
+  }
 
   return result;
 }
@@ -44,7 +52,7 @@ async function getFrame(id) {
   });
 
   if (!result) {
-    throw new Error('frame not found');
+    throw new ApiError(400, 'frame not found', true);
   }
 
   return result;
@@ -104,7 +112,7 @@ async function updateFrame(id, body) {
   });
 
   if (!result) {
-    throw new Error('error update');
+    throw new ApiError(500, 'internal server error', true);
   }
 
   return result;

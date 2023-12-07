@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5bbc4ad-0000-4df2-ad3c-04c365d3266a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/fetchApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/helper/errorApiHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prisma/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/seed.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/analizeFace.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/analizeFace.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/face.controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/frame.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/frame.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/route/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/analizeFace.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/face.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/frame.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/frame.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tempo/1701959586673-money.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tempo/1701959939022-money.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +109,7 @@
       <workItem from="1701710002233" duration="45631000" />
       <workItem from="1701948857594" duration="6680000" />
       <workItem from="1701955821075" duration="4300000" />
-      <workItem from="1701964422414" duration="4483000" />
+      <workItem from="1701964422414" duration="7668000" />
     </task>
     <servers />
   </component>
@@ -107,7 +121,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/service/frame.service.js</url>
-          <line>60</line>
+          <line>68</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

@@ -23,11 +23,19 @@ async function faceAnalize(req, res) {
     };
 
     const response = await axios.request(config);
-    console.log(JSON.stringify(response.data.result));
     const face = response.data.result;
     const { gender } = req.body;
+
     const result = await getAllFrameByQuery(face.toUpperCase(), gender.toUpperCase());
-    console.log(result);
+
+    if (result.length < 1) {
+      return res.status(200).json({
+        message: 'frame for your face not found',
+        result: `your face is ${face}`,
+        // data: response.data.result,
+      });
+    }
+
     return res.status(200).json({
       message: 'success get frame by userFace',
       data: result,
@@ -37,7 +45,6 @@ async function faceAnalize(req, res) {
     console.error(error);
 
     if (error.response) {
-      // Jika respons dari server ada, tampilkan pesan kesalahan dari server
       console.error(JSON.stringify(error.response.data));
     }
 

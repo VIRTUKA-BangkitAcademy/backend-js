@@ -12,6 +12,7 @@ router.get('/api/frames', frameController.getFrames);
 
 router.get('/api/frames/:id', frameController.getFrame);
 router.post('/api/frames', multer({ storage: fileStorageFrame }).single('image'), frameController.createFrame);
+router.patch('/api/frames/:id', multer({ storage: fileStorageFrame }).single('image'), frameController.updateFrame);
 
 // FACE ANALIZE
 router.post('/faceanalize', multer({ storage: fileStorageFace }).single('image'), analizeFace.faceAnalize);

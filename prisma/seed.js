@@ -5,14 +5,14 @@ async function seed() {
     {
       name: 'Frame 1',
       linkBuy: 'https://example.com/buy/frame1',
-      urlPicture: 'https://example.com/pictures/frame1.jpg',
-      gender: 'MALE',
+      image: 'images/frame/1701968869147-money.jpeg',
+      gender: 'FEMALE',
       face: 'ROUND',
     },
     {
       name: 'Frame 2',
       linkBuy: 'https://example.com/buy/frame2',
-      urlPicture: 'https://example.com/pictures/frame2.jpg',
+      image: 'images/frame/1701968869147-money.jpeg',
       gender: 'FEMALE',
       face: 'OVAL',
     },

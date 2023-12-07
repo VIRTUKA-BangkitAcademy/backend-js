@@ -2,35 +2,35 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-	provider = "prisma-client-js"
+  provider = "prisma-client-js"
 }
 
 datasource db {
-	provider = "mysql"
-	url      = env("DATABASE_URL")
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
 model frame {
-	id        String   @id @default(uuid())
-	name      String   @db.VarChar(200)
-	linkBuy   String   @db.VarChar(200)
-	image     String   @db.VarChar(200)
-	gender    gender
-	createdAt DateTime @default(now())
-	updatedAt DateTime @updatedAt
-	face      face
+  id        String   @id @default(uuid())
+  name      String   @db.VarChar(200)
+  linkBuy   String   @db.VarChar(200)
+  image     String   @db.VarChar(200)
+  gender    gender
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  face      face
 }
 
 enum face {
-	DIAMOND
-	OBLONG
-	OVAL
-	ROUND
-	SQUARE
-	TRIANGLE
+  DIAMOND
+  OBLONG
+  OVAL
+  ROUND
+  SQUARE
+  TRIANGLE
 }
 
 enum gender {
-	MALE
-	FEMALE
+  MALE
+  FEMALE
 }

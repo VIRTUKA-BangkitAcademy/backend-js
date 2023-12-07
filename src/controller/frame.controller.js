@@ -39,9 +39,24 @@ async function createFrame(req, res) {
   try {
     const frame = await frameService.createFrame(req, req.file.path);
 
-    return res.status(200).json({
+    return res.status(201).json({
       status: 'OK',
       message: 'success create data frame',
+      frame,
+    });
+  } catch (e) {
+    console.log(e);
+    return res.status(400).json({ message: e.message });
+  }
+}
+
+async function updateFrame(req, res) {
+  try {
+    const frame = await frameService.updateFrame(req.params.id, req.body);
+
+    return res.status(201).json({
+      status: 'OK',
+      message: 'success update data frame',
       frame,
     });
   } catch (e) {
@@ -54,4 +69,5 @@ module.exports = {
   getFrame,
   getFrames,
   createFrame,
+  updateFrame,
 };
