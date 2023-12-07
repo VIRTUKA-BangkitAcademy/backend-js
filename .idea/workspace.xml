@@ -5,31 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5bbc4ad-0000-4df2-ad3c-04c365d3266a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6d26fddf-8266-447b-923c-171bac5221ce.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6d26fddf-8266-447b-923c-171bac5221ce.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6d26fddf-8266-447b-923c-171bac5221ce/storage_v2/_src_/schema/virtuka.NiDJGw.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6d26fddf-8266-447b-923c-171bac5221ce/storage_v2/_src_/schema/virtuka.NiDJGw.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701962307482-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701962391460-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701962570927-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701962807692-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701962839871-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701962916304-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701962960727-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701963012161-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701963085127-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701963189583-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701963251199-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701963252510-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701963280864-triangle_aug99_image_6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/1701963334933-triangle_aug99_image_6.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/analizeFace.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/analizeFace.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware/multerImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware/faceMulter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/frame.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/frame.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +95,7 @@
       <workItem from="1701710002233" duration="45631000" />
       <workItem from="1701948857594" duration="6680000" />
       <workItem from="1701955821075" duration="4300000" />
-      <workItem from="1701964422414" duration="3776000" />
+      <workItem from="1701964422414" duration="4173000" />
     </task>
     <servers />
   </component>
