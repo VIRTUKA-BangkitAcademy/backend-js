@@ -37,7 +37,7 @@ async function getFrame(req, res) {
 
 async function createFrame(req, res) {
   try {
-    const frame = await frameService.createFrame(req.body);
+    const frame = await frameService.createFrame(req, req.file.path);
 
     return res.status(200).json({
       status: 'OK',
@@ -45,6 +45,7 @@ async function createFrame(req, res) {
       frame,
     });
   } catch (e) {
+    console.log(e);
     return res.status(400).json({ message: e.message });
   }
 }

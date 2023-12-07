@@ -11,21 +11,24 @@ datasource db {
 }
 
 model frame {
-  id        Int      @id @default(autoincrement())
-  name      String   @unique @db.VarChar(100)
-  link      String   @db.VarChar(200)
-  picture   String   @db.VarChar(200)
-  gender    gender
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  face      face     @relation(fields: [faceId], references: [id])
-  faceId    Int
+  id         String   @id @default(uuid())
+  name       String   @unique @db.VarChar(100)
+  linkBuy    String   @db.VarChar(200)
+  urlPicture String   @db.VarChar(200)
+  gender     gender
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  face       face
 }
 
-model face {
-  id    Int     @id @default(autoincrement())
-  name  String  @unique
-  frame frame[]
+enum face {
+  DIAMOND
+  HEART
+  OBLONG
+  OVAL
+  ROUND
+  SQUARE
+  TRIANGLE
 }
 
 enum gender {
