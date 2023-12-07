@@ -1,8 +1,8 @@
 const multer = require('multer');
 
-const fileStorage = multer.diskStorage({
+const fileStorageFace = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, './images/');
+    cb(null, './images/face/');
   },
   filename: (req, file, cb) => {
     cb(null, `${new Date().getTime()}-${file.originalname}`);
@@ -10,5 +10,5 @@ const fileStorage = multer.diskStorage({
 });
 
 module.exports = {
-  fileStorage,
+  fileStorageFace,
 };

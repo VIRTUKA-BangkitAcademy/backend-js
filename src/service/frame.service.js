@@ -7,7 +7,7 @@ async function getAllFrame() {
   const result = await prisma.frame.findMany({
     select: {
       name: true,
-      urlPicture: true,
+      image: true,
       gender: true,
       face: true,
     },
@@ -16,10 +16,8 @@ async function getAllFrame() {
   return result;
 }
 
-async function getAllFrameByQuery(gender, picture) {
+async function getAllFrameByQuery(face, gender) {
   // your fetch api from python BE
-  const response = await axios.post('http://pppp/predict');
-  const { face } = response;
 
   const result = await prisma.frame.findMany({
     where: {
@@ -38,7 +36,7 @@ async function getFrame(id) {
     },
     select: {
       name: true,
-      urlPicture: true,
+      image: true,
       linkBuy: true,
       gender: true,
       face: true,
@@ -56,11 +54,11 @@ async function createFrame(req, path) {
   const {
     name, linkBuy, face, gender,
   } = req.body;
-  const urlPicture = path;
-  console.log(urlPicture);
+  const image = path;
+  console.log(image);
   const data = {
     name,
-    urlPicture,
+    image,
     linkBuy,
     face: face.toUpperCase(),
     gender: gender.toUpperCase(),
@@ -71,7 +69,7 @@ async function createFrame(req, path) {
     },
     select: {
       name: true,
-      urlPicture: true,
+      image: true,
       linkBuy: true,
       gender: true,
       face: true,
@@ -83,7 +81,7 @@ async function createFrame(req, path) {
 
 async function updateFrame(id, body) {
   const {
-    name, linkBuy, urlPicture, face, gender,
+    name, linkBuy, image, face, gender,
   } = body;
 
   const checkExistFrame = await getFrame(id);
@@ -94,7 +92,7 @@ async function updateFrame(id, body) {
 
   const data = {
     name,
-    urlPicture,
+    image,
     linkBuy,
     face: face.toUpperCase(),
     gender: gender.toUpperCase(),
