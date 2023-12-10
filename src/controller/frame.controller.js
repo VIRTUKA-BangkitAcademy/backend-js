@@ -54,7 +54,7 @@ async function updateFrame(req, res) {
   try {
     const frame = await frameService.updateFrame(req.params.id, req.body);
 
-    return res.status(201).json({
+    return res.status(200).json({
       status: 'OK',
       message: 'success update data frame',
       frame,
@@ -65,9 +65,22 @@ async function updateFrame(req, res) {
   }
 }
 
+async function deleteFrameById(req, res) {
+  try {
+    await frameService.deleteFrameById(req.params.id);
+
+    return res.status(200).json({
+      message: `succes delete with id ${req.params.id}`,
+    });
+  } catch (e) {
+    return res.status(400).json({ message: e.message });
+  }
+}
+
 module.exports = {
   getFrame,
   getFrames,
   createFrame,
   updateFrame,
+  deleteFrameById,
 };

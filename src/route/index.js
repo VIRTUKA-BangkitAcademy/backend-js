@@ -9,8 +9,8 @@ const router = new express.Router();
 
 // FRAME
 router.get('/api/frames', frameController.getFrames);
-
 router.get('/api/frames/:id', frameController.getFrame);
+router.delete('/api/frames/:id', frameController.deleteFrameById);
 router.post('/api/frames', multer({ storage: fileStorageFrame }).single('image'), frameController.createFrame);
 router.patch('/api/frames/:id', multer({ storage: fileStorageFrame }).single('image'), frameController.updateFrame);
 

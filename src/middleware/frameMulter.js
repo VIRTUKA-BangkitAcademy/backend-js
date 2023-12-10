@@ -5,7 +5,8 @@ const fileStorageFrame = multer.diskStorage({
     cb(null, './images/frame');
   },
   filename: (req, file, cb) => {
-    cb(null, `${new Date().getTime()}-${file.originalname}`);
+    const sanitizeName = file.originalname.replace(/\s+/g, '-');
+    cb(null, `${new Date().getTime()}-${sanitizeName}`);
   },
 });
 

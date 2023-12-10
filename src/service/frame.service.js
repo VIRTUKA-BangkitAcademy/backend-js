@@ -3,9 +3,9 @@ const prisma = require('../../prisma/prismaClient');
 const { ApiError } = require('../../helper/errorApiHandler');
 
 async function getAllFrame() {
-  console.log(path.join(__dirname, '..', 'images'));
   const result = await prisma.frame.findMany({
     select: {
+      id: true,
       name: true,
       image: true,
       gender: true,
@@ -92,7 +92,7 @@ async function updateFrame(id, body) {
     name, linkBuy, image, face, gender,
   } = body;
 
-  const checkExistFrame = await getFrame(id);
+  const checkExistFrame = await prisma.frame.findUnique({ where: { id } });
 
   if (!checkExistFrame) {
     throw new Error('Frame Not Found');
@@ -112,7 +112,21 @@ async function updateFrame(id, body) {
   });
 
   if (!result) {
-    throw new ApiError(500, 'internal server error', true);
+    throw new ApiError(400, 'internal server error', true);
+  }
+
+  return result;
+}
+
+async function deleteFrameById(id) {
+  const result = await prisma.frame.delete({
+    where: {
+      id,
+    },
+  });
+
+  if (!result) {
+    throw new ApiError(400, 'id doesnt exist', true);
   }
 
   return result;
@@ -124,4 +138,5 @@ module.exports = {
   createFrame,
   updateFrame,
   getAllFrameByQuery,
+  deleteFrameById,
 };
