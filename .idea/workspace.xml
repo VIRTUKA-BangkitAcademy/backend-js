@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5bbc4ad-0000-4df2-ad3c-04c365d3266a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper/fetchApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/helper/errorApiHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/face/1701968883864-money.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/frame/1701968869147-money.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/frame/1701968878200-money.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prisma/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/analizeFace.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/analizeFace.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/face.controller.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/frame.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/frame.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/route/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/analizeFace.service.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/face.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/frame.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/frame.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tempo/1701959586673-money.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tempo/1701959939022-money.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,32 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "production",
-    "javascript.nodejs.core.library.configured.version": "18.17.1",
-    "javascript.nodejs.core.library.typings.version": "18.17.1",
-    "last_opened_file_path": "/Users/bayeng/Documents/Kuliah/Bangkit academy/projectCapstone/backend-js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/Users/bayeng/.nvm/versions/node/v18.17.1/bin/node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "terminal",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;production&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.17.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.17.1&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/bayeng/Documents/Kuliah/Bangkit academy/projectCapstone/backend-js&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/Users/bayeng/.nvm/versions/node/v18.17.1/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src" />
@@ -109,22 +108,17 @@
       <workItem from="1701710002233" duration="45631000" />
       <workItem from="1701948857594" duration="6680000" />
       <workItem from="1701955821075" duration="4300000" />
-      <workItem from="1701964422414" duration="7668000" />
+      <workItem from="1701964422414" duration="8279000" />
+      <workItem from="1702098891285" duration="599000" />
+      <workItem from="1702224568052" duration="4367000" />
+      <workItem from="1702294879159" duration="12282000" />
+      <workItem from="1702361031088" duration="16190000" />
+      <workItem from="1702428448603" duration="1411000" />
+      <workItem from="1702432826644" duration="3350000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/service/frame.service.js</url>
-          <line>68</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -40,14 +40,16 @@ async function getAllFrameByQuery(face, gender) {
 async function getFrame(id) {
   const result = await prisma.frame.findUnique({
     where: {
-      id: Number(id),
+      id,
     },
     select: {
+      id: true,
       name: true,
       image: true,
       linkBuy: true,
       gender: true,
       face: true,
+      description: true,
     },
   });
 
@@ -58,11 +60,11 @@ async function getFrame(id) {
   return result;
 }
 
-async function createFrame(req, path) {
+async function createFrame(req) {
   const {
-    name, linkBuy, face, gender,
+    name, linkBuy, face, gender, description,
   } = req.body;
-  const image = path;
+  const image = req.file.path;
   console.log(image);
   const data = {
     name,
@@ -70,6 +72,7 @@ async function createFrame(req, path) {
     linkBuy,
     face: face.toUpperCase(),
     gender: gender.toUpperCase(),
+    description,
   };
   const result = await prisma.frame.create({
     data: {
@@ -81,6 +84,7 @@ async function createFrame(req, path) {
       linkBuy: true,
       gender: true,
       face: true,
+      description: true,
     },
   });
 

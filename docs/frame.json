@@ -1,0 +1,215 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Frame API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/frames": {
+      "get": {
+        "summary": "Get all frames",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "frames": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string",
+                            "enum": [
+                              "MALE",
+                              "FEMALE"
+                            ]
+                          },
+                          "face": {
+                            "type": "string",
+                            "enum": [
+                              "ROUND",
+                              "OBLONG",
+                              "TRIANGLE",
+                              "DIAMOND"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "OK",
+                  "message": "success get all frame",
+                  "frames": [
+                    {
+                      "id": "2826d053-a0d0-40bf-a055-a8a4cc0fcc2d",
+                      "name": "coba update",
+                      "image": "images/frame/1701970339737-money.jpeg",
+                      "gender": "FEMALE",
+                      "face": "TRIANGLE"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create a frame",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "file"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "MALE",
+                      "FEMALE"
+                    ]
+                  },
+                  "face": {
+                    "type": "string",
+                    "enum": [
+                      "OVAL",
+                      "DIAMOND",
+                      "OBLONG",
+                      "ROUND",
+                      "SQUARE",
+                      "TRIANGLE"
+                    ]
+                  },
+                  "description": {
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "OK",
+                  "message": "success create data frame",
+                  "frame": {
+                    "name": "coba 12311",
+                    "image": "images/frame/1702357164572-money.jpeg",
+                    "linkBuy": "http://cibalipampam",
+                    "gender": "FEMALE",
+                    "face": "OBLONG",
+                    "description": "this is description"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/frames/{id}": {
+      "get": {
+        "summary": "Get a frame by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "ID of the frame to retrieve"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "frame": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "format": "uuid"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "image": {
+                          "type": "string"
+                        },
+                        "gender": {
+                          "type": "string",
+                          "enum": ["MALE", "FEMALE"]
+                        },
+                        "face": {
+                          "type": "string",
+                          "enum": ["ROUND", "OBLONG", "TRIANGLE", "DIAMOND"]
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "OK",
+                  "message": "success get frame by ID",
+                  "frame": {
+                    "id": "2826d053-a0d0-40bf-a055-a8a4cc0fcc2d",
+                    "name": "coba update",
+                    "image": "images/frame/1701970339737-money.jpeg",
+                    "gender": "FEMALE",
+                    "face": "TRIANGLE"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+}
