@@ -17,7 +17,7 @@ router.post('/api/users', userController.register);
 router.get('/api/users', userController.getAll);
 
 // FRAME
-router.use(accessValidation);
+// router.use(accessValidation);
 router.get('/api/frames', frameController.getFrames);
 router.get('/api/frames/:id', frameController.getFrame);
 router.delete('/api/frames/:id', frameController.deleteFrameById);

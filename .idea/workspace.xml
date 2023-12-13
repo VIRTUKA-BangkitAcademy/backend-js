@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5bbc4ad-0000-4df2-ad3c-04c365d3266a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/face/1701968883864-money.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/frame/1701968869147-money.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/frame/1701968878200-money.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/prisma/seed.js" beforeDir="false" afterPath="$PROJECT_DIR$/prisma/seed.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/frame.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/frame.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/route/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/route/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/frame.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/frame.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +74,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -114,7 +102,7 @@
       <workItem from="1702294879159" duration="12282000" />
       <workItem from="1702361031088" duration="16190000" />
       <workItem from="1702428448603" duration="1411000" />
-      <workItem from="1702432826644" duration="3350000" />
+      <workItem from="1702432826644" duration="4444000" />
     </task>
     <servers />
   </component>
