@@ -5,8 +5,8 @@ const fileStorageFace = multer.diskStorage({
     cb(null, './images/face/');
   },
   filename: (req, file, cb) => {
-    const sanitizeName = file.originalname.replace(/\s+/g, '-');
-    cb(null, `${new Date().getTime()}-${sanitizeName}`);
+    // const sanitizeName = file.originalname.replace(/\s+/g, '-');
+    cb(null, `${new Date().getTime()}`);
   },
 });
 

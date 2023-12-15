@@ -65,7 +65,6 @@ async function createFrame(req) {
     name, linkBuy, face, gender, description,
   } = req.body;
   const image = req.file.path;
-  console.log(image);
   const data = {
     name,
     image,
