@@ -5,8 +5,9 @@ const fileStorageFace = multer.diskStorage({
     cb(null, './images/face/');
   },
   filename: (req, file, cb) => {
+    const fileExtension = file.originalname.split('.').pop();
     // const sanitizeName = file.originalname.replace(/\s+/g, '-');
-    cb(null, `${new Date().getTime()}`);
+    cb(null, `${new Date().getTime()}.${fileExtension}`);
   },
 });
 
