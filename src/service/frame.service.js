@@ -94,14 +94,13 @@ async function updateFrame(id, req) {
   const {
     name, linkBuy, face, gender,
   } = req.body;
+  const image = req.file.path;
 
   const frame = await prisma.frame.findUnique({ where: { id } });
   if (!frame) {
     throw new ApiError(404, 'Frame Not Found', true);
   }
 
-  const image = req.file.path;
-  console.log(image);
   const pathImage = frame.image;
   fs.unlinkSync(pathImage);
 
@@ -112,8 +111,6 @@ async function updateFrame(id, req) {
     ...(face === undefined ? { gender: gender.toUpperCase() } : {}),
     ...(gender === undefined ? { face: face.toUpperCase() } : {}),
   };
-
-  console.log(data);
 
   const result = await prisma.frame.update({
     where: { id },
