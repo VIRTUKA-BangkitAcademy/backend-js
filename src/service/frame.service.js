@@ -92,7 +92,7 @@ async function createFrame(req) {
 
 async function updateFrame(id, req) {
   const {
-    name, linkBuy, face, gender,
+    name, linkBuy, face, gender, description,
   } = req.body;
 
   const frame = await prisma.frame.findUnique({ where: { id } });
@@ -108,9 +108,10 @@ async function updateFrame(id, req) {
   }
 
   const data = {
-    name,
+    name,s
     image,
     linkBuy,
+    description,
     ...(face === undefined ? { gender: gender.toUpperCase() } : {}),
     ...(gender === undefined ? { face: face.toUpperCase() } : {}),
   };
