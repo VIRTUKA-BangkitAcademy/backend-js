@@ -91,11 +91,14 @@
                     "type": "string",
                     "format": "file"
                   },
+                  "linkBuy": {
+                    "type": "string"
+                  },
                   "gender": {
                     "type": "string",
                     "enum": [
-                      "MALE",
-                      "FEMALE"
+                      "FEMALE",
+                      "MALE"
                     ]
                   },
                   "face": {
@@ -183,11 +186,13 @@
                         },
                         "gender": {
                           "type": "string",
-                          "enum": ["MALE", "FEMALE"]
+                          "enum": [
+                            "MALE",
+                            "FEMALE"
+                          ]
                         },
                         "face": {
-                          "type": "string",
-                          "enum": ["ROUND", "OBLONG", "TRIANGLE", "DIAMOND"]
+                          "type": "string"
                         }
                       }
                     }
@@ -208,8 +213,115 @@
             }
           }
         }
+      },
+      "patch": {
+        "summary": "Update a frame by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "ID of the frame to update"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "file"
+                  },
+                  "linkBuy": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "FEMALE",
+                      "MALE"
+                    ]
+                  },
+                  "face": {
+                    "type": "string",
+                    "enum": [
+                      "OVAL",
+                      "DIAMOND",
+                      "OBLONG",
+                      "ROUND",
+                      "SQUARE",
+                      "TRIANGLE"
+                    ]
+                  },
+                  "description": {
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "status": "OK",
+                  "message": "success update data frame",
+                  "frame": {
+                    "id": "3129b48b-a3c2-443c-b052-5f20ee3084b6",
+                    "name": "frame 1 updated image",
+                    "linkBuy": "tokopedia.com",
+                    "image": "images/frame/1702723486380.png",
+                    "description": "this is description",
+                    "gender": "FEMALE",
+                    "createdAt": "2023-12-16T10:43:20.856Z",
+                    "updatedAt": "2023-12-16T10:44:46.390Z",
+                    "face": "OBLONG"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "summary": "Delete a frame by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "description": "ID of the frame to delete"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "example": {
+                  "message": "success delete with id 3129b48b-a3c2-443c-b052-5f20ee3084b6"
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
 }
-}
+
