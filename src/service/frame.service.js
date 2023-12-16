@@ -1,4 +1,4 @@
-const path = require('path');
+const fs = require('fs');
 const prisma = require('../../prisma/prismaClient');
 const { ApiError } = require('../../helper/errorApiHandler');
 
@@ -54,7 +54,7 @@ async function getFrame(id) {
   });
 
   if (!result) {
-    throw new ApiError(400, 'frame not found', true);
+    throw new ApiError(404, 'frame not found', true);
   }
 
   return result;
@@ -90,24 +90,30 @@ async function createFrame(req) {
   return result;
 }
 
-async function updateFrame(id, body) {
+async function updateFrame(id, req) {
   const {
-    name, linkBuy, image, face, gender,
-  } = body;
+    name, linkBuy, face, gender,
+  } = req.body;
 
-  const checkExistFrame = await prisma.frame.findUnique({ where: { id } });
-
-  if (!checkExistFrame) {
-    throw new Error('Frame Not Found');
+  const frame = await prisma.frame.findUnique({ where: { id } });
+  if (!frame) {
+    throw new ApiError(404, 'Frame Not Found', true);
   }
+
+  const image = req.file.path;
+  console.log(image);
+  const pathImage = frame.image;
+  fs.unlinkSync(pathImage);
 
   const data = {
     name,
     image,
     linkBuy,
-    face: face.toUpperCase(),
-    gender: gender.toUpperCase(),
+    ...(face === undefined ? { gender: gender.toUpperCase() } : {}),
+    ...(gender === undefined ? { face: face.toUpperCase() } : {}),
   };
+
+  console.log(data);
 
   const result = await prisma.frame.update({
     where: { id },
@@ -115,13 +121,21 @@ async function updateFrame(id, body) {
   });
 
   if (!result) {
-    throw new ApiError(400, 'internal server error', true);
+    throw new ApiError(400, 'failed update frame', true);
   }
 
   return result;
 }
 
 async function deleteFrameById(id) {
+  const frame = await getFrame(id);
+  if (!frame) {
+    throw new ApiError(404, 'frame not found', true);
+  }
+
+  const pathImage = frame.image;
+  fs.unlinkSync(pathImage);
+
   const result = await prisma.frame.delete({
     where: {
       id,
@@ -129,7 +143,7 @@ async function deleteFrameById(id) {
   });
 
   if (!result) {
-    throw new ApiError(400, 'id doesnt exist', true);
+    throw new ApiError(404, 'frame doesnt exist', true);
   }
 
   return result;

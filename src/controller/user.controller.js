@@ -9,7 +9,7 @@ async function login(req, res) {
       user,
     });
   } catch (e) {
-    return res.status(400).json({
+    return res.status(e.statusCode).json({
       message: e.message,
     });
   }

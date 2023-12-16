@@ -6,7 +6,7 @@ async function getFrames(req, res) {
     if (frame.length < 1) {
       return res.status(200).json({
         status: 'OK',
-        message: 'success get all frame',
+        message: 'frame not found, create data frame first',
         frames: [],
       });
     }
@@ -16,7 +16,6 @@ async function getFrames(req, res) {
       frames: frame,
     });
   } catch (e) {
-    console.log(e);
     return res.status(400).json({ message: e.message });
   }
 }
@@ -45,14 +44,13 @@ async function createFrame(req, res) {
       frame,
     });
   } catch (e) {
-    console.log(e);
     return res.status(400).json({ message: e.message });
   }
 }
 
 async function updateFrame(req, res) {
   try {
-    const frame = await frameService.updateFrame(req.params.id, req.body);
+    const frame = await frameService.updateFrame(req.params.id, req);
 
     return res.status(200).json({
       status: 'OK',
@@ -60,7 +58,6 @@ async function updateFrame(req, res) {
       frame,
     });
   } catch (e) {
-    console.log(e);
     return res.status(400).json({ message: e.message });
   }
 }
