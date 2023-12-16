@@ -205,6 +205,7 @@
                     "id": "2826d053-a0d0-40bf-a055-a8a4cc0fcc2d",
                     "name": "coba update",
                     "image": "images/frame/1701970339737-money.jpeg",
+                    "description": "this is description",
                     "gender": "FEMALE",
                     "face": "TRIANGLE"
                   }
