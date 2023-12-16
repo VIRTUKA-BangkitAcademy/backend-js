@@ -5,6 +5,100 @@
     "version": "1.0.0"
   },
   "paths": {
+    "/faceanalize": {
+      "post": {
+        "summary": "Get glasses recommendations",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "file"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "FEMALE",
+                      "MALE"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "message": {
+                      "type": "string"
+                    },
+                    "frames": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "format": "uuid"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "image": {
+                            "type": "string"
+                          },
+                          "gender": {
+                            "type": "string",
+                            "enum": [
+                              "MALE",
+                              "FEMALE"
+                            ]
+                          },
+                          "face": {
+                            "type": "string",
+                            "enum": [
+                              "ROUND",
+                              "OBLONG",
+                              "TRIANGLE",
+                              "DIAMOND"
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "example": {
+                  "status": "OK",
+                  "message": "success get all frame",
+                  "frames": [
+                    {
+                      "id": "2826d053-a0d0-40bf-a055-a8a4cc0fcc2d",
+                      "name": "coba update",
+                      "image": "images/frame/1701970339737-money.jpeg",
+                      "gender": "FEMALE",
+                      "face": "TRIANGLE"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/frames": {
       "get": {
         "summary": "Get all frames",
