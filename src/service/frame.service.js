@@ -94,15 +94,18 @@ async function updateFrame(id, req) {
   const {
     name, linkBuy, face, gender,
   } = req.body;
-  const image = req.file.path;
 
   const frame = await prisma.frame.findUnique({ where: { id } });
   if (!frame) {
     throw new ApiError(404, 'Frame Not Found', true);
   }
 
-  const pathImage = frame.image;
-  fs.unlinkSync(pathImage);
+  let image = req.file;
+  if (!(image === undefined)) {
+    image = req.file.path;
+    const pathImage = frame.image;
+    fs.unlinkSync(pathImage);
+  }
 
   const data = {
     name,
