@@ -108,7 +108,7 @@ async function updateFrame(id, req) {
   }
 
   const data = {
-    name,s
+    name,
     image,
     linkBuy,
     description,
