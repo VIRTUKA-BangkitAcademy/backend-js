@@ -12,10 +12,10 @@ datasource db {
 
 model frame {
   id          String   @id @unique @default(uuid())
-  name        String   @db.VarChar(100)
-  linkBuy     String   @db.VarChar(100)
+  name        String   @db.VarChar(500)
+  linkBuy     String   @db.VarChar(2000)
   image       String   @db.VarChar(100)
-  description String   @db.VarChar(500)
+  description String   @db.VarChar(5000)
   gender      gender
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
