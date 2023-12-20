@@ -1,6 +1,6 @@
-const fs = require("fs");
-const prisma = require("../../prisma/prismaClient");
-const { ApiError } = require("../../helper/errorApiHandler");
+const fs = require('fs');
+const prisma = require('../../prisma/prismaClient');
+const { ApiError } = require('../../helper/errorApiHandler');
 
 async function getAllFrame(req) {
   const { size, page } = req.query;
@@ -15,7 +15,6 @@ async function getAllFrame(req) {
     },
   };
 
-
   if (size !== undefined && page !== undefined) {
     frameQueryOptions.take = Number(size);
     frameQueryOptions.skip = Number(page);
@@ -25,7 +24,7 @@ async function getAllFrame(req) {
 
   if (!result || result.length === 0) {
     throw new ApiError(500, 'Internal server error', true);
-
+  }
 
   return result;
 }
@@ -41,7 +40,7 @@ async function getAllFrameByQuery(face, gender) {
   });
 
   if (!result) {
-    throw new ApiError(500, "internal server error", true);
+    throw new ApiError(500, 'internal server error', true);
   }
 
   return result;
@@ -64,14 +63,16 @@ async function getFrame(id) {
   });
 
   if (!result) {
-    throw new ApiError(404, "frame not found", true);
+    throw new ApiError(404, 'frame not found', true);
   }
 
   return result;
 }
 
 async function createFrame(req) {
-  const { name, linkBuy, face, gender, description } = req.body;
+  const {
+    name, linkBuy, face, gender, description,
+  } = req.body;
   const image = req.file.path;
   const data = {
     name,
@@ -97,12 +98,15 @@ async function createFrame(req) {
 
   return result;
 }
+
 async function updateFrame(id, req) {
-  const { name, linkBuy, face, gender, description } = req.body;
+  const {
+    name, linkBuy, face, gender, description,
+  } = req.body;
 
   const frame = await prisma.frame.findUnique({ where: { id } });
   if (!frame) {
-    throw new ApiError(404, "Frame Not Found", true);
+    throw new ApiError(404, 'Frame Not Found', true);
   }
 
   let image = req.file;
@@ -112,7 +116,7 @@ async function updateFrame(id, req) {
     fs.unlinkSync(pathImage);
   }
 
-  let updatedData = {
+  const updatedData = {
     name,
     image,
     linkBuy,
@@ -133,7 +137,7 @@ async function updateFrame(id, req) {
   });
 
   if (!result) {
-    throw new ApiError(400, "Failed to update frame", true);
+    throw new ApiError(400, 'Failed to update frame', true);
   }
 
   return result;
@@ -142,7 +146,7 @@ async function updateFrame(id, req) {
 async function deleteFrameById(id) {
   const frame = await getFrame(id);
   if (!frame) {
-    throw new ApiError(404, "frame not found", true);
+    throw new ApiError(404, 'frame not found', true);
   }
 
   const pathImage = frame.image;
@@ -155,7 +159,7 @@ async function deleteFrameById(id) {
   });
 
   if (!result) {
-    throw new ApiError(404, "frame doesnt exist", true);
+    throw new ApiError(404, 'frame doesnt exist', true);
   }
 
   return result;
