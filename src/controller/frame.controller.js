@@ -2,7 +2,7 @@ const frameService = require('../service/frame.service');
 
 async function getFrames(req, res) {
   try {
-    const frame = await frameService.getAllFrame();
+    const frame = await frameService.getAllFrame(req);
     if (frame.length < 1) {
       return res.status(200).json({
         status: 'OK',

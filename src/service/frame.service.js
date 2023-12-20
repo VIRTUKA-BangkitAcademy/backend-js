@@ -2,8 +2,10 @@ const fs = require('fs');
 const prisma = require('../../prisma/prismaClient');
 const { ApiError } = require('../../helper/errorApiHandler');
 
-async function getAllFrame() {
-  const result = await prisma.frame.findMany({
+async function getAllFrame(req) {
+  const { size, page } = req.query;
+
+  const frameQueryOptions = {
     select: {
       id: true,
       name: true,
@@ -11,10 +13,17 @@ async function getAllFrame() {
       gender: true,
       face: true,
     },
-  });
+  };
 
-  if (!result) {
-    throw new ApiError(500, 'internal server error', true);
+  if (size !== undefined && page !== undefined) {
+    frameQueryOptions.take = Number(size);
+    frameQueryOptions.skip = Number(page);
+  }
+
+  const result = await prisma.frame.findMany(frameQueryOptions);
+
+  if (!result || result.length === 0) {
+    throw new ApiError(500, 'Internal server error', true);
   }
 
   return result;
