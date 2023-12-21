@@ -21,12 +21,16 @@ async function getAllFrame(req) {
   }
 
   const result = await prisma.frame.findMany(frameQueryOptions);
+  const responImagesWithBaseURL = result.map((frame) => ({
+    ...frame,
+    image: `http://capst.glng.my.id/${frame.image}`,
+  }));
 
   if (!result || result.length === 0) {
     throw new ApiError(500, 'Internal server error', true);
   }
 
-  return result;
+  return responImagesWithBaseURL;
 }
 
 async function getAllFrameByQuery(face, gender) {
