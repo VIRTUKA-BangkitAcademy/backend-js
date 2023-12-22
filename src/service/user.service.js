@@ -79,7 +79,7 @@ async function register(body) {
   }
 
   const hashPassword = passwordHashed.generate(password);
-  console.log(hashPassword);
+
   const result = await prisma.user.create({
     data: {
       name,
